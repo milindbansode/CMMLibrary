@@ -6,13 +6,13 @@
     "iisExpress": {
       "applicationUrl": "http://localhost:60136",
       "sslPort": 0
-    }
+    }   
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "api/Authors/GetAllAuthors",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

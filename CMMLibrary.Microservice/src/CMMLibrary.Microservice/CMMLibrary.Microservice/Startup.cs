@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using CMMLibrary.Infrastructure;
 
 namespace CMMLibrary.Microservice
 {
@@ -25,6 +27,10 @@ namespace CMMLibrary.Microservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<Infrastructure.CMMLibraryContext>(options =>
+     options.UseSqlServer(
+         Configuration.GetConnectionString("CMMLibrarayDBConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
