@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 export class AuthorData {
   id: string;
-  authorname: string;
+  name: string;
   bookName: string;
 }
 
@@ -26,7 +26,6 @@ export class AuthorsComponent implements OnInit {
   constructor() {
     var authorData: any;
 
-    alert('test1');
     authorData =
       [
         {
@@ -44,7 +43,6 @@ export class AuthorsComponent implements OnInit {
 
     this.dataSource = authorData;
 
-    alert(this.dataSource[1].bookname);
   }
 
   ngOnInit() {

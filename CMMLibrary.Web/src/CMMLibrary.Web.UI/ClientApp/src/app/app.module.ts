@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { AngularMaterialModule } from './angular-material.module';
 
 @NgModule({
   declarations: [
@@ -29,26 +30,20 @@ import { MatTableModule } from '@angular/material/table';
     CounterComponent,
     FetchDataComponent,
     AuthorsComponent
-    , MyTestComponent
     
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    //TestModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'authors', component: AuthorsComponent },
     ]),
-    NoopAnimationsModule,
-    MatGridListModule
-    , MatListModule
-    , MatProgressBarModule
-    , MatPaginatorModule
-    , MatTableModule
+    NoopAnimationsModule
+    , AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

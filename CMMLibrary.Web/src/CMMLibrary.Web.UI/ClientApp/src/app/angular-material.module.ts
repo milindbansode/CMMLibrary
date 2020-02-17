@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
-import { from } from 'rxjs';
+import { AuthorsComponent } from './authors/authors.component';
+
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
-@NgModule
-  ({
-    imports: [
-    ],
-    exports: [
-      MatGridListModule,
-      MatListModule,
-      MatProgressBarModule,
-      MatPaginatorModule
-    ],
-    providers: [
-    ]
-  }) export class AngularMaterialModule {}
+@NgModule({
+  exports: [
+    MatGridListModule
+    , MatListModule
+    , MatProgressBarModule
+    , MatPaginatorModule
+    , MatTableModule
+  ],
 
+  declarations: [],
+  imports:
+    [
+    
+  ],
+  bootstrap: []
+})
+export class AngularMaterialModule { }
