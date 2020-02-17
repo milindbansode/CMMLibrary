@@ -7,6 +7,7 @@
 *.userosscache
 *.sln.docstates
 
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -26,6 +27,7 @@ Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+.vs/*.*
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -229,3 +231,4 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+v16

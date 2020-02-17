@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
+export class AuthorData {
+  id: string;
+  authorname: string;
+  bookName: string;
+}
 
 @Component({
   selector: 'app-authors',
@@ -7,9 +16,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorsComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'authorname', 'bookname'];
+  dataSource: any;
+
+
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+
+  constructor() {
+    var authorData: any;
+
+    alert('test1');
+    authorData =
+      [
+        {
+          id: 1,
+          authorname: 'chk1',
+          bookname: 'test book name'
+      },
+      {
+        id: 2,
+        authorname: 'chk2',
+        bookname: 'test2 book name'
+      }
+      ];
+      
+
+    this.dataSource = authorData;
+
+    alert(this.dataSource[1].bookname);
+  }
 
   ngOnInit() {
-  }
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
+  } 
+
+
 
 }
